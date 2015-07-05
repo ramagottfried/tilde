@@ -22,7 +22,7 @@
 
 #define NAME "shot-ms~"
 #define DESCRIPTION "sample triggered ramp with sample rate delegation"
-#define AUTHORS "Rama Gottfried, based loosely on shot~ by Andrew Benson"
+#define AUTHORS "Rama Gottfried, based on shot~ by Andrew Benson"
 #define COPYRIGHT_YEARS "2013-15"
 
 #include "ext.h"
