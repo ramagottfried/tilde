@@ -19,10 +19,11 @@
  HEREUNDER IS PROVIDED "AS IS". REGENTS HAS NO OBLIGATION TO PROVIDE
  MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
  */
+
 #define NAME "polywave~"
 #define DESCRIPTION "lookup wavetable with ability to switch between array of buffers at samplerate"
 #define AUTHORS "Rama Gottfried"
-#define COPYRIGHT_YEARS "2014"
+#define COPYRIGHT_YEARS "2014-15"
 
 #include "ext.h"
 #include "ext_obex.h"
@@ -846,6 +847,9 @@ int main(void)
 	polywave_class = c;
     
     ps_buffer_modified = gensym("buffer_modified");
+    
+    post("%s by %s.", NAME, AUTHORS);
+    post("Copyright (c) " COPYRIGHT_YEARS " Regents of the University of California.  All rights reserved.");
     
 	return 0;
 }

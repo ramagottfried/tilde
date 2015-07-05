@@ -23,11 +23,6 @@
 /*--
  granubuf~ v.0.2
  
- notes: 
- - in new version, window buffers should ALWAYS be declared, if none are declared use cos or hanning at index 0
- - special is the fof routinue which REQUIRES the tex shaping function... so fof cannot be added after instantiation if there are no shaping function inlets, so fof tex can not be adjusted at sample rate if there is no inlet, but not a show stopper
- 
- 
  internal window types:
     0: cos
     1: fof
@@ -35,9 +30,6 @@
     3: sinc
  
  to do: 
-    - change location/dur to be start/end -- this effects the resulting rate, but due to situations with reverse play rates and negative chirps, we really need the end point -- this is different with granusoids~ and granufm~ which are oscilator based (actaully I might add options for wave tables there also...)
-   - fix chirp
- 
     - add samplerate check in dsp function, if this gets changed after buffer info is loaded it screws up the pitch, or calculate increment in the perform routine with the samplerate information
  
     - add information outlet to get grain information
@@ -46,19 +38,10 @@
     - errors for values for duration, rate, or end if specified as inlets
         -- will have to store inlets as static, and then change @passive parameter if changed via message
 
-++++++ STATUS 9/1  BROKEN as is... TO DO ASAP:
- currently setup for automatic @passive setting with inlets and without
- need to now implement a check in the grain creation for which element is passive and calculate accordingly
- also, need to add start_ms and end_ms and make start&end 0-1
- ... actually, maybe just use 0-1 -- if the user is specifying specific points in the buffer, they will know the buffersize and can normalize to float (might need to check accuracy?
- 
-++++
-
  ***
  
  eventually:
     - cubic, bspline, resampled interpolation for nicer slow rate (but linear is sounding not too bad)
-    - adjust for user's buffer sampling rate?
  
 --*/
 
@@ -66,7 +49,7 @@
 #define NAME "granubuf~"
 #define DESCRIPTION "Generalized samplerate buffer granulator"
 #define AUTHORS "Rama Gottfried"
-#define COPYRIGHT_YEARS "2013"
+#define COPYRIGHT_YEARS "2013-15"
 
 //#include "version.h"
 #include "ext.h"
@@ -1911,7 +1894,8 @@ int main(void)
 	class_register(CLASS_BOX, c);
 	granubuf_class = c;
     
-    error("n.b. granubuf~ is currently in alpha development -- configuration will be stabilized soon, please be sure to see the help patch for updated information,");
+    post("%s by %s.", NAME, AUTHORS);
+    post("Copyright (c) " COPYRIGHT_YEARS " Regents of the University of California.  All rights reserved.");
     
 	return 0;
 }
