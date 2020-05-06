@@ -1,0 +1,51 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7D1844A8184AE7361B05A2B7F3B07BFBC7A36114",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "43DDD4A1012A81E5C2F5DA96FCA0DABF5263B8FC" : 0,
+    "7D1844A8184AE7361B05A2B7F3B07BFBC7A36114" : 0,
+    "73CD3912FF7E5D839C8BDA43B346354BE088DDE8" : 0,
+    "20DC6287C6D318433B681296E0BF364C4882CD47" : 9223372036854775807,
+    "BFE38AA7F3B3EE5D839CDF960E9B1411A92C41B2" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "DC081A41-1692-48AE-8836-EA9954525427",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "43DDD4A1012A81E5C2F5DA96FCA0DABF5263B8FC" : "..\/max6-sdk",
+    "7D1844A8184AE7361B05A2B7F3B07BFBC7A36114" : "tilde\/",
+    "73CD3912FF7E5D839C8BDA43B346354BE088DDE8" : "..\/libo",
+    "20DC6287C6D318433B681296E0BF364C4882CD47" : "..\/max-sdk",
+    "BFE38AA7F3B3EE5D839CDF960E9B1411A92C41B2" : "..\/libomax"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "tilde",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "tilde.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Cycling74\/max-sdk.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "20DC6287C6D318433B681296E0BF364C4882CD47"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Cycling74\/max6-sdk.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "43DDD4A1012A81E5C2F5DA96FCA0DABF5263B8FC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/CNMAT\/libo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "73CD3912FF7E5D839C8BDA43B346354BE088DDE8"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ramagottfried\/tilde.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7D1844A8184AE7361B05A2B7F3B07BFBC7A36114"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/CNMAT\/libomax.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BFE38AA7F3B3EE5D839CDF960E9B1411A92C41B2"
+    }
+  ]
+}

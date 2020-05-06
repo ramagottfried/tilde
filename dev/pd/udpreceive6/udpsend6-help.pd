@@ -1,0 +1,13 @@
+#N canvas 616 514 450 300 10;
+#X obj 274 120 print;
+#X msg 81 11 send 1 2 3 4;
+#X obj 82 99 udpsend6;
+#X obj 274 86 netreceive -b -u 3333;
+#X obj 118 149 print;
+#X msg 91 34 connect ::1 3333;
+#X msg 109 56 multicast_loopback 1;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 3 0 0 0;
+#X connect 5 0 2 0;
+#X connect 6 0 2 0;
