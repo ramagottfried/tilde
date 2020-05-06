@@ -1006,6 +1006,7 @@
 				OTHER_CFLAGS = (
 					"-DNO_TRANSLATION_SUPPORT",
 					"-g",
+					"-O3",
 				);
 				OTHER_LDFLAGS = "@../../max-sdk/source/c74support/max-includes/c74_linker_flags.txt";
 				PRELINK_LIBS = "\"$(SRCROOT)/../../libo/libo.a\" \"$(SRCROOT)/../../libomax/libomax.a\"";
