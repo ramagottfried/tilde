@@ -12,7 +12,7 @@
 
 #include <string>
 
-#define GRANUMC_MAX_BUFFERS 128
+#define GRANUMC_MAX_BUFFERS 256
 #define GRANUMC_NUMINLETS 7
 
 typedef enum _granubuf_in
@@ -106,6 +106,7 @@ void granu_mc_perform64(t_granu_mc *x, t_object *dsp64, double **ins, long numin
     bool loopmode = x->loopmode > 0;
     auto& grains = x->grains;
     long numbufs = x->numbufs;
+    //auto buf_refs = x->buf_refs;
   //  printf("dsp numbufs %ld\n", numbufs);
 
     long numvoices = x->num_voices;
@@ -245,7 +246,7 @@ void granu_mc_perform64(t_granu_mc *x, t_object *dsp64, double **ins, long numin
                                       windcoef,
                                       ampvec,
                                       x->buf_refs[_bufIdx],
-                                      NULL,
+                                      NULL, // future holder of optional window buffer
                                       loopmode,
                                       windowMode,
                                       x->channel_offset,
@@ -396,6 +397,10 @@ t_max_err granu_mc_buf_set(t_granu_mc *x, t_object *attr, long argc, t_atom *arg
             x->numbufs = argc;
             critical_exit(x->lock);
         }
+        else
+        {
+            object_error((t_object *)x, "max buffer count is %d", GRANUMC_MAX_BUFFERS );
+        }
     }
     
     return 0;
@@ -427,9 +432,10 @@ t_max_err granu_mc_buf_get(t_granu_mc *x, t_object *attr, long *argc, t_atom **a
 
 void granu_mc_polybuf_append(t_granu_mc *x, long newsize)
 {
-    long currentCount = x->numbufs;
     if( newsize < GRANUMC_MAX_BUFFERS )
     {
+        long currentCount = x->numbufs;
+
      //   post("pre size %ld", x->buf_refs.size());
         if( newsize > x->buf_refs.size() )
             x->buf_refs.reserve(newsize);
@@ -444,9 +450,15 @@ void granu_mc_polybuf_append(t_granu_mc *x, long newsize)
             x->buf_refs.emplace_back( buffer_proxy_new(s) );
             x->buf_name[i] = s;
         }
+
+        x->numbufs = newsize;
+
+    }
+    else
+    {
+        object_error((t_object *)x, "max buffer count is %d", GRANUMC_MAX_BUFFERS );
     }
     
-    x->numbufs = newsize;
 
 }
 
@@ -463,7 +475,7 @@ void granu_mc_buf_clear(t_granu_mc *x)
     }
     
     x->buf_refs.clear();
-   // post("clear size %ld", x->buf_refs.size());
+ //   post("clear size %ld", x->buf_refs.size());
     
     x->numbufs = 0;
 
@@ -476,10 +488,10 @@ t_max_err granu_mc_polybuffer_attach_notify(t_granu_mc *x, t_symbol *s, t_symbol
     if (msg == gensym("count_changed"))
     {
         long count = object_attr_getlong(data, _sym_count);
-/*
-        if (x->polybuffer_name && x->polybuffer_name->s_name)
-            printf("polybuffer_tester is notified, that %s now holds %ld buffers.\n", x->polybuffer_name->s_name, count);
-  */
+
+     //   if (x->polybuffer_name && x->polybuffer_name->s_name)
+     //       printf("polybuffer_tester is notified, that %s now holds %ld buffers.\n", x->polybuffer_name->s_name, count);
+
         critical_enter(x->lock);
         if( count != x->numbufs )
         {
