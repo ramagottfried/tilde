@@ -116,7 +116,7 @@
 		11C4E09B233361C800557DE7 /* grain.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = grain.hpp; path = "src/granubuf.mc~/grain.hpp"; sourceTree = SOURCE_ROOT; };
 		11C4E09C233361C800557DE7 /* grain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = grain.cpp; path = "src/granubuf.mc~/grain.cpp"; sourceTree = SOURCE_ROOT; };
 		11C4E09D233361C800557DE7 /* granubufmc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = granubufmc.cpp; path = "src/granubuf.mc~/granubufmc.cpp"; sourceTree = SOURCE_ROOT; };
-		11C4E0A12333679E00557DE7 /* commonsyms.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = commonsyms.c; path = "../../max-sdk/source/c74support/max-includes/common/commonsyms.c"; sourceTree = "<group>"; };
+		11C4E0A12333679E00557DE7 /* commonsyms.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = commonsyms.c; path = "../max-sdk-base/c74support/max-includes/common/commonsyms.c"; sourceTree = "<group>"; };
 		11D1B9841B44B9A3000DED3C /* granufm~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "granufm~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D1B9911B44BA0B000DED3C /* shot-ms~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "shot-ms~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D1B9921B44BA41000DED3C /* shot.ms~.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "shot.ms~.c"; path = "src/shot-ms~/shot.ms~.c"; sourceTree = SOURCE_ROOT; };
@@ -889,8 +889,8 @@
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					/Library/Frameworks,
-					"\"$(SRCROOT)/../../max-sdk/source/c74support/max-includes\"",
-					"\"$(SRCROOT)/../../max-sdk/source/c74support/msp-includes\"",
+					"\"$(SRCROOT)/../max-sdk-base/c74support/max-includes\"",
+					"\"$(SRCROOT)/../max-sdk-base/c74support/msp-includes\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -899,7 +899,7 @@
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "../../max-sdk/source/c74support/max-includes/macho-prefix.pch";
+				GCC_PREFIX_HEADER = "../max-sdk-base/c74support/max-includes/macho-prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -914,17 +914,17 @@
 				GENERATE_MASTER_OBJECT_FILE = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../max-sdk/source/c74support/max-includes\"",
+					"\"$(SRCROOT)/../max-sdk-base/c74support/max-includes\"",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"\"$(SRCROOT)/../../libo\"",
-					"\"$(SRCROOT)/../../libomax\"",
-					"\"$(SRCROOT)/../include\"",
-					"\"$(SRCROOT)/../../max-sdk/source/c74support/msp-includes\"",
+					"\"$(SRCROOT)/../libo\"",
+					"\"$(SRCROOT)/../libomax\"",
+					"\"$(SRCROOT)/include\"",
+					"\"$(SRCROOT)/../max-sdk-base/c74support/msp-includes\"",
 				);
 				INFOPLIST_FILE = "src/$(TARGET_NAME)/Info.plist";
 				LIBRARY_SEARCH_PATHS = (
-					"\"$(SRCROOT)/../../libo\"",
-					"\"$(SRCROOT)/../../libomax\"",
+					"\"$(SRCROOT)/../libo\"",
+					"\"$(SRCROOT)/../libomax\"",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -934,8 +934,8 @@
 					"-g",
 					"-fPIC",
 				);
-				OTHER_LDFLAGS = "@../../max-sdk/source/c74support/max-includes/c74_linker_flags.txt";
-				PRELINK_LIBS = "\"$(SRCROOT)/../../libo/libo.a\" \"$(SRCROOT)/../../libomax/libomax.a\"";
+				OTHER_LDFLAGS = "@../max-sdk-base/c74support/max-includes/c74_linker_flags.txt";
+				PRELINK_LIBS = "\"$(SRCROOT)/../libo/libo.a\" \"$(SRCROOT)/../libomax/libomax.a\"";
 				SDKROOT = macosx;
 				SYMROOT = build;
 				WARNING_CFLAGS = (
@@ -971,8 +971,8 @@
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					/Library/Frameworks,
-					"\"$(SRCROOT)/../../max-sdk/source/c74support/max-includes\"",
-					"\"$(SRCROOT)/../../max-sdk/source/c74support/msp-includes\"",
+					"\"$(SRCROOT)/../max-sdk-base/c74support/max-includes\"",
+					"\"$(SRCROOT)/../max-sdk-base/c74support/msp-includes\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -980,7 +980,7 @@
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_OPTIMIZATION_LEVEL = 03;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "../../max-sdk/source/c74support/max-includes/macho-prefix.pch";
+				GCC_PREFIX_HEADER = "../max-sdk-base/c74support/max-includes/macho-prefix.pch";
 				GCC_UNROLL_LOOPS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -991,17 +991,17 @@
 				GENERATE_MASTER_OBJECT_FILE = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../max-sdk/source/c74support/max-includes\"",
+					"\"$(SRCROOT)/../max-sdk-base/c74support/max-includes\"",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"\"$(SRCROOT)/../../libo\"",
-					"\"$(SRCROOT)/../../libomax\"",
-					"\"$(SRCROOT)/../include\"",
-					"\"$(SRCROOT)/../../max-sdk/source/c74support/msp-includes\"",
+					"\"$(SRCROOT)/../libo\"",
+					"\"$(SRCROOT)/../libomax\"",
+					"\"$(SRCROOT)/include\"",
+					"\"$(SRCROOT)/../max-sdk-base/c74support/msp-includes\"",
 				);
 				INFOPLIST_FILE = "src/$(TARGET_NAME)/Info.plist";
 				LIBRARY_SEARCH_PATHS = (
-					"\"$(SRCROOT)/../../libo\"",
-					"\"$(SRCROOT)/../../libomax\"",
+					"\"$(SRCROOT)/../libo\"",
+					"\"$(SRCROOT)/../libomax\"",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -1011,8 +1011,8 @@
 					"-O3",
 					"-fPIC",
 				);
-				OTHER_LDFLAGS = "@../../max-sdk/source/c74support/max-includes/c74_linker_flags.txt";
-				PRELINK_LIBS = "\"$(SRCROOT)/../../libo/libo.a\" \"$(SRCROOT)/../../libomax/libomax.a\"";
+				OTHER_LDFLAGS = "@../max-sdk-base/c74support/max-includes/c74_linker_flags.txt";
+				PRELINK_LIBS = "\"$(SRCROOT)/../libo/libo.a\" \"$(SRCROOT)/../libomax/libomax.a\"";
 				SDKROOT = macosx;
 				SYMROOT = build;
 				WARNING_CFLAGS = (
